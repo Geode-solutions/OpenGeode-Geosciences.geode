@@ -1,0 +1,5 @@
+{
+	"name": "opengeode_geosciences",
+	"python": ["server"],
+	"lib": []
+}
