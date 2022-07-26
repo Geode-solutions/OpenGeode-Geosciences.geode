@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Copyright (c) 2019 - 2021 Geode-solutions
+# Copyright (c) 2019 - 2022 Geode-solutions
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -28,11 +28,13 @@ from geode_protocols import GeodeProtocol
 
 from wslink import register as exportRpc
 
+
 class OpenGeodeGeosciences(GeodeProtocol):
     @exportRpc("opengeode.load.structuralmodel")
     def loadStructuralModel(self, filename):
         structural_model = geosciences.load_structural_model(filename)
         vtk, vtk_light = py_model.brepToVTK(structural_model)
-        return self.registerObjectFromFile("StructuralModel",filename, structural_model, vtk, vtk_light)
+        return self.registerObjectFromFile("StructuralModel", filename, structural_model, vtk, vtk_light)
+
 
 protocols = [OpenGeodeGeosciences]
