@@ -34,7 +34,7 @@ jobs:
     - name: Upload
       uses: softprops/action-gh-release@v1
       with:
-        files: "opengeode-geosciences-${{ steps.package.outputs.version }}-ubuntu.zip"
+        files: "opengeode-geosciences-${{ steps.package.outputs.version }}-linux.zip"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Notify slack
