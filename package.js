@@ -69,7 +69,11 @@ archive.on("error", function(err) {
 // pipe archive data to the file
 archive.pipe(output);
 
-const frontFile = path.join(__dirname, "dist", "opengeode-geosciences.umd.min.js");
+const frontFile = path.join(
+  __dirname,
+  "dist",
+  "opengeode-geosciences.umd.min.js"
+);
 archive.append(fs.createReadStream(frontFile), {
   name: path.join(dir, "index.js")
 });
