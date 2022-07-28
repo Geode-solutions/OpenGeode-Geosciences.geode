@@ -25,7 +25,7 @@ import LogoStructuralModel from "../assets/structural_model.svg";
 import Store from "./store";
 import StructuralModelMenu from "@geode/opengeode/src/model/brep_menu";
 
-export default function(store) {
+export default function (store) {
   store.registerModule("geosciences", Store);
   store.dispatch("registerObjectType", "StructuralModel");
   store.commit("ui/registerInputItem", {
@@ -33,7 +33,7 @@ export default function(store) {
     name: "structural_model",
     component: LogoStructuralModel,
     action: "geosciences/loadStructuralModel",
-    tooltip: "Import StructuralModel"
+    tooltip: "Import StructuralModel",
   });
   StructuralModelMenu(store, "StructuralModel");
 }

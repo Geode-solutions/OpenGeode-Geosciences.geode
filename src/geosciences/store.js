@@ -28,8 +28,8 @@ export default {
     loadStructuralModel({ state, dispatch }, filename) {
       dispatch("private/loadObject", {
         command: "opengeode.load.structuralmodel",
-        filename
-      }).then(object => {
+        filename,
+      }).then((object) => {
         let brepStyle = {
           style: {
             corners: { visible: true, size: 1, color: [1, 1, 1] },
@@ -37,14 +37,14 @@ export default {
             surfaces: {
               visible: true,
               color: [1, 1, 1],
-              mesh: { visible: false }
+              mesh: { visible: false },
             },
-            blocks: {}
-          }
+            blocks: {},
+          },
         };
         dispatch("addObject", Object.assign(object, brepStyle), { root: true });
       });
-    }
+    },
   },
   modules: {
     private: {
@@ -55,12 +55,12 @@ export default {
             "network/call",
             {
               command,
-              args: [filename]
+              args: [filename],
             },
             { root: true }
           );
-        }
-      }
-    }
-  }
+        },
+      },
+    },
+  },
 };

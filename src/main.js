@@ -23,6 +23,6 @@
 
 import geosciences from "./geosciences";
 
-export default function(store) {
+export default function (store) {
   geosciences(store);
 }
